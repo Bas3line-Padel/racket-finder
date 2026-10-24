@@ -12,14 +12,14 @@
 <meta name="apple-mobile-web-app-title" content="Racket Finder">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <link rel="manifest" href="manifest.webmanifest">
-<link rel="icon" type="image/png" sizes="192x192" href="images/icon-192.png">
-<link rel="apple-touch-icon" href="images/icon-180.png">
-<link rel="preload" href="fonts/Obviously-BlackItalic.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="fonts/Obviously-NarrowMedium.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="preload" href="Obviously-BlackItalic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="Obviously-NarrowMedium.woff2" as="font" type="font/woff2" crossorigin>
 <style>
-@font-face{font-family:"Obviously";src:url("fonts/Obviously-BlackItalic.woff2") format("woff2"),url("fonts/Obviously-BlackItalic.woff") format("woff");font-weight:900;font-style:italic;font-display:swap}
-@font-face{font-family:"Obviously";src:url("fonts/Obviously-Medium.woff2") format("woff2"),url("fonts/Obviously-Medium.woff") format("woff");font-weight:500;font-style:normal;font-display:swap}
-@font-face{font-family:"Obviously Narrow";src:url("fonts/Obviously-NarrowMedium.woff2") format("woff2"),url("fonts/Obviously-NarrowMedium.woff") format("woff");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"Obviously";src:url("Obviously-BlackItalic.woff2") format("woff2"),url("Obviously-BlackItalic.woff") format("woff");font-weight:900;font-style:italic;font-display:swap}
+@font-face{font-family:"Obviously";src:url("Obviously-Medium.woff2") format("woff2"),url("Obviously-Medium.woff") format("woff");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"Obviously Narrow";src:url("Obviously-NarrowMedium.woff2") format("woff2"),url("Obviously-NarrowMedium.woff") format("woff");font-weight:500;font-style:normal;font-display:swap}
 
 :root{
   --ink:#000000;
@@ -160,7 +160,7 @@ body.is-home main{max-width:none;padding:0}
 <body>
 <header class="bar">
   <div class="bar-in">
-    <button class="logo-btn" type="button" data-go="home" aria-label="Bas3line racket finder, start page"><img src="images/logo.svg" alt="Bas3line" width="408" height="74"></button>
+    <button class="logo-btn" type="button" data-go="home" aria-label="Bas3line racket finder, start page"><img src="logo.svg" alt="Bas3line" width="408" height="74"></button>
     <button class="link-btn" type="button" data-go="range">All rackets</button>
   </div>
 </header>
@@ -407,7 +407,7 @@ const app = document.getElementById("app");
 const idOf = name => name.trim().toLowerCase().replace(/\s+/g, "-");
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const img = (id, cls = "", lazy = false) =>
-  `<img class="${cls}" src="images/rackets/${id}.webp" alt="${esc(RACKETS[id].name)} padel racket" width="640" height="949"${lazy ? ' loading="lazy"' : ""}>`;
+  `<img class="${cls}" src="${id}.webp" alt="${esc(RACKETS[id].name)} padel racket" width="640" height="949"${lazy ? ' loading="lazy"' : ""}>`;
 
 function go(state) { history.pushState(state, ""); render(state); }
 window.addEventListener("popstate", e => render(e.state || { view: "home" }));
@@ -448,7 +448,7 @@ function render(s) {
 function home() {
   return `
     <section class="home">
-      <img class="home-img" src="images/home-bg-2x.webp" srcset="images/home-bg-2x.webp 2x, images/home-bg-3x.webp 3x" alt="Bas3line logo above a close-up of the Juno padel racket" width="780" height="1040">
+      <img class="home-img" src="home-bg-2x.webp" srcset="home-bg-2x.webp 2x, home-bg-3x.webp 3x" alt="Bas3line logo above a close-up of the Juno padel racket" width="780" height="1040">
       <div class="home-shade" aria-hidden="true"></div>
       <div class="home-in">
         <h1 class="home-title">Find<br>your<br>racket</h1>
