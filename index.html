@@ -78,6 +78,8 @@ body.is-home .bar{display:none}
 body.is-home main{max-width:none;padding:0}
 .home{position:relative;overflow:hidden;max-width:560px;margin:0 auto;background:var(--navy);color:#fff;display:flex;flex-direction:column;min-height:calc(100vh - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px));min-height:calc(100svh - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px))}
 .home-img{position:absolute;left:0;top:0;width:100%;height:auto}
+.home-logo{position:absolute;top:36px;left:0;right:0;display:flex;justify-content:center}
+.home-logo img{width:242px;height:auto}
 .home-shade{display:none;position:absolute;left:0;top:0;width:100%;aspect-ratio:780/1040}
 .home-in{position:relative;flex:1;display:flex;flex-direction:column;justify-content:flex-end;padding:0 28px 36px}
 .home-title{font-family:var(--head);font-weight:900;font-style:italic;text-transform:uppercase;letter-spacing:.03em;line-height:.92;font-size:clamp(3rem,16.4vw,4.4rem);margin:0 0 22px;color:#fff}
@@ -109,7 +111,7 @@ body.is-home main{max-width:none;padding:0}
 /* Racket showcase */
 .based{margin:0 0 14px;font-size:1.05rem}
 .panel{position:relative;background:var(--court);border-radius:14px;display:flex;justify-content:center;padding:10px 0 0;margin:0 0 20px;overflow:hidden}
-.panel img{height:min(54vh,460px);width:auto}
+.panel img{height:min(54vh,460px);height:min(54svh,460px);width:auto}
 .tag{position:absolute;z-index:1;top:14px;left:14px;background:var(--navy);color:#fff;font-family:var(--head);font-weight:500;letter-spacing:.03em;font-size:.9rem;padding:7px 12px;border-radius:999px}
 .name-row{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:0 0 16px}
 .name{color:var(--navy);font-family:var(--head);font-weight:900;font-style:italic;text-transform:uppercase;letter-spacing:.03em;line-height:.95;font-size:clamp(2.3rem,11vw,3.4rem);margin:0}
@@ -448,8 +450,9 @@ function render(s) {
 function home() {
   return `
     <section class="home">
-      <img class="home-img" src="home-bg-2x.webp" srcset="home-bg-2x.webp 2x, home-bg-3x.webp 3x" alt="Bas3line logo above a close-up of the Juno padel racket" width="780" height="1040">
+      <img class="home-img" src="home-bg-2x.webp" srcset="home-bg-2x.webp 2x, home-bg-3x.webp 3x" alt="Close-up of the Juno padel racket" width="780" height="1040">
       <div class="home-shade" aria-hidden="true"></div>
+      <div class="home-logo"><img src="logo-white.svg" alt="Bas3line" width="408" height="74"></div>
       <div class="home-in">
         <h1 class="home-title">Find<br>your<br>racket</h1>
         <p class="home-lead">Answer three quick questions and we’ll match you to the Bas3line racket that suits your game.</p>
